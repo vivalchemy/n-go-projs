@@ -1,0 +1,7 @@
+services:
+  html-server:
+    container_name: html-server
+    build: .
+    image: html-server
+    ports:
+      - '8080:8080'
