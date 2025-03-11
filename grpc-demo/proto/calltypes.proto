@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package calltypes;
+
+option go_package = "./pb";
+
+service CallTypes{
+  rpc UnaryCall(EnumBody) returns (Body);
+  rpc ServerStreamingCall(RepeatedBody) returns (stream Body);
+  rpc ClientStreamingCall(stream Body) returns (RepeatedBody);
+  rpc BidiStreamingCall(stream Body) returns (stream Body);
+}
+
+enum ResponseType{
+  RT_RANDOM = 0; 
+  RT_PREDEFINED = 1;
+}
+// no message
+message EnumBody{
+  ResponseType response_type = 1;
+}
+
+// single message
+message Body{
+  string message = 1;
+}
+
+// array of messages
+message RepeatedBody{
+  repeated string message = 1;
+}

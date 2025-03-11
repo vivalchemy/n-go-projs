@@ -1,0 +1,20 @@
+FROM golang:alpine AS development
+
+WORKDIR /app
+
+COPY go.mod go.sum ./
+
+RUN go mod download
+
+COPY . .
+
+CMD ["go", "build", "-o", "/go/bin/grpcdemo-client", "./client", "&&", "/go/bin/grpcdemo-client"]
+
+# Use scratch instead of alpine for a minimal final image
+FROM scratch AS production
+
+COPY --from=development /go/bin/grpdemo-client /go/bin/grpcdemo-client
+
+EXPOSE 8080
+
+ENTRYPOINT ["/go/bin/grpdemo-client"]
