@@ -1,0 +1,15 @@
+name: Post one lead
+method: POST
+url: http://localhost:8080/api/v1/lead
+body:
+  content: |-
+    {
+      "name": "Vivian Ludrick",
+      "company": "Vivalchemy",
+      "email": "vivianludrick.main@gmail.com",
+      "phone": 8983514765
+    }
+  content_type: application/json
+headers:
+- name: content-type
+  value: application/json
