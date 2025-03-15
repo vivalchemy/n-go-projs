@@ -3,3 +3,4 @@ open-weather-map/.apiConfig
 discord-bot/.apiConfig.json
 pexels-api-sdk/.env
 mongo-fiber-hrms/data
+own-database/data/users
