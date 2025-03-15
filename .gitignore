@@ -2,3 +2,4 @@ go-mongodb-rest/data
 open-weather-map/.apiConfig
 discord-bot/.apiConfig.json
 pexels-api-sdk/.env
+mongo-fiber-hrms/data

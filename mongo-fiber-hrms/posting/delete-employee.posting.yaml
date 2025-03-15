@@ -1,0 +1,3 @@
+name: Delete one employee
+method: DELETE
+url: http://localhost:8080/employee/67d3429917d4df53cb4c0166

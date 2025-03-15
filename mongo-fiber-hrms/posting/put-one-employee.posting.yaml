@@ -1,0 +1,14 @@
+name: Put one lead
+method: PUT
+url: http://localhost:8080/employee/67d3429917d4df53cb4c0166
+body:
+  content: |-
+    {
+        "name": "Ronit Patra",
+        "salary": 500000,
+        "age": 21
+      }
+  content_type: application/json
+headers:
+- name: content-type
+  value: application/json

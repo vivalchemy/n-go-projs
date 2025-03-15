@@ -1,0 +1,29 @@
+services:
+  mongo:
+    image: mongo:latest
+    container_name: hrms-mongo
+    restart: always
+    env_file:
+      - ./.env
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data/db
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    stdin_open: true
+    tty: true
+  
+  mongo-express:
+    image: mongo-express
+    container_name: hrms-mongo-express
+    restart: unless-stopped
+    ports:
+      - "28081:8081"
+    env_file:
+      - ./.env
+    depends_on:
+      - mongo

@@ -1,0 +1,14 @@
+name: Post one Employee
+method: POST
+url: http://localhost:8080/employee
+body:
+  content: |-
+    {
+      "name": "Vivian Ludrick",
+      "salary": 1000,
+      "age": 20
+    }
+  content_type: application/json
+headers:
+- name: content-type
+  value: application/json
