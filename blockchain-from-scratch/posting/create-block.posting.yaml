@@ -1,0 +1,17 @@
+name: Create Block
+url: http://localhost:8080
+method: POST
+body:
+  content: |
+    {
+      "book_id": "bdb0aed435423a74449338d945fde89",
+      "user": "this",
+      "checkout_date": "2020-01-01T00:00:00Z"
+    }
+  content_type: application/json
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: Accept
+    value: application/json, */*
+
